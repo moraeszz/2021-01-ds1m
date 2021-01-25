@@ -4,10 +4,18 @@ public class Conta {
 	
 	private String tipo;
 	private double saldo;
-	public String numero;
-	public String titular;
-	public boolean ativa;
-	public double chequeEspecial; 
+	private String numero;
+	private Cliente titular;
+	private boolean ativa;
+	private double chequeEspecial; 
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
+	public Cliente getTitular() {
+		return this.titular;
+	}
 	
 	///*** Metodos de acessos aos atributos da classe
 	///*** getters and setters
@@ -17,9 +25,38 @@ public class Conta {
 		if (tipo.equals("Corrente") || tipo.equals("Poupança")){
 			this.tipo = tipo; 
 		} else {
-			System.out.println("O tipo deve ser Corrente ou Poupança");
+			System.out.println("Tipo iválido!!!");
 		}
 	}
+	
+	public String getTipo() {
+		return this.tipo;
+	}
+	
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
+	public String getNumero() {
+		return this.numero;
+	}
+	
+	public void setChequeEspecial( double chequeEspecial) {
+		this.chequeEspecial = chequeEspecial;
+	}
+	
+	public double getChequeEspecial() {
+		return this.chequeEspecial;
+	}
+	
+	public void setAtiva( boolean ativa) {
+		this.ativa = ativa;
+	}
+	
+	public boolean isAtiva() {
+		return this.ativa;
+	}
+	
 	
 	public void depositar(double valorDeposito) {
 		
